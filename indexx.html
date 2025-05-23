@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="port.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+            overflow-x: hidden;
+            background-image: url('bg1.png');
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+            padding: 0 30px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .right ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .right ul li {
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .right ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .right ul li a:hover {
+            color: #FFD700;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px;
+            flex-wrap: wrap;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .leftSection {
+            margin-right: 10px;
+            max-width: 45%;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .leftSection .introTitle {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .leftSection .introTitle .highlight {
+            color: rgb(190, 74, 190);
+        }
+
+        .leftSection .introDescription {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .rightSection {
+            margin-left: 10px;
+            max-width: 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .rightSection img {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .rightSection img:hover {
+            transform: scale(1.1);
+        }
+
+        .socialLinks {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .socialLinks a {
+            color: white;
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .socialLinks a:hover {
+            color: #FFD700;
+        }
+
+        .downloadResume {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgb(190, 74, 190);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .downloadResume:hover {
+            background-color: rgb(220, 110, 220);
+        }
+
+        .happyToChat {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .happyToChat a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            background-color: #25D366;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .happyToChat a:hover {
+            background-color: #1BB74E;
+            transform: scale(1.05);
+        }
+
+        .happyToChat a i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        #about {
+            display: none;
+            background-color: rgb(18, 18, 62);
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .firstSection {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .leftSection, .rightSection {
+                max-width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Dynamic Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about"id="aboutBtn">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                <div class="introTitle">
+                    Hii, I am <span class="highlight">Vishal Vishwakarma</span>
+                </div>
+                <div class="introDescription">
+                    I'm a <span id="element"></span><br>
+                    <span class="typed-subtext">passionate about creating innovative and efficient solutions to real-world problems.</span>
+                  </div>
+                  
+            </div>
+
+            <div class="rightSection">
+                <img src="devp.png" alt="Developer at work" width="300" height="200">
+            </div>
+        </section>
+
+        <div class="socialLinks">
+            <a href="https://github.com/iwvishal" target="_blank" class="fab fa-github"></a>
+            <a href="https://www.linkedin.com/in/vishal-vishwakarma-98485024a" target="_blank" class="fab fa-linkedin"></a>
+            <a href="https://x.com/iwvishal?t=Ky7ORlJ-DYrf22ENgwETlg&s=09" target="_blank" class="fab fa-x-twitter"></a>
+            <a href="https://www.instagram.com/iwvishal?igsh=MTNoNm5iOWpzYWE2cQ==" target="_blank" class="fab fa-instagram"></a>
+        </div>
+
+        <div class="downloadResume">
+            <a href="/Users/vishalvishwakarma/Downloads/officialVishalResume.pdf" download>Download Resume</a>
+        </div>
+
+        <div class="happyToChat">
+            <a href="https://wa.me/<YOUR_PHONE_NUMBER>" target="_blank">
+                <i class="https://wa.me/+918104631108"></i> Happy to Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- About Section -->
+        <div id="about">
+            <h2>About Me</h2>
+            <p>
+                
+                I'm a passionate software developer with experience in multiple technologies, including web development, mobile app development (Flutter), and creative fields such as graphic design and video editing. I believe in solving real-world problems with innovative and efficient solutions.
+            </p>
+        </div>
+    </main>
+    
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+ var typed = new Typed('#element', {
+  strings: ['Web Developer,', 'App Developer using Flutter,', 'Video and Photo Editor also'],
+  typeSpeed: 50,
+  backSpeed: 30,
+  backDelay: 1500,
+  smartBackspace: true,
+  loop: true
+});
+
+
+
+
+
+        // Event listener for About button
+        document.getElementById("aboutBtn").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevents the default link behavior
+
+            // Toggle the visibility of the About section
+            var aboutSection = document.getElementById("about");
+            if (aboutSection.style.display === "none" || aboutSection.style.display === "") {
+                aboutSection.style.display = "block"; // Show the About section
+            } else {
+                aboutSection.style.display = "none"; // Hide the About section
+            }
+        });
+
+        // Background Image Slideshow
+        var images = ['bg1.png', 'bg2.png', 'bg3.png']; // Replace with your PNG image paths
+        var currentIndex = 0;
+        
+        function changeBackground() {
+            document.body.style.backgroundImage = `url(${images[currentIndex]})`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 5000); // Change background every 5 seconds
+    </script>
+</body>
+</html>
